@@ -5,13 +5,18 @@ pipeline {
 
         stage('Setup') {
             steps {
-                sh 'python3 -m pip install -r requirements.txt'
+                // Vérifier si python3 est installé
+                sh 'python3 --version'  // Affiche la version de Python 3 pour vérification
+                // Installer les dépendances avec pip
+                sh 'python3 -m ensurepip --upgrade'  // Assurer que pip est installé et à jour
+                sh 'python3 -m pip install -r requirements.txt'  // Installer les dépendances
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest tests/'
+                // Exécuter les tests avec pytest
+                sh 'pytest tests/'  // Exécute les tests dans le dossier tests/
             }
         }
     }

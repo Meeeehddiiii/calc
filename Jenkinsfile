@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Créer un environnement virtuel
-                    sh 'python3 -m venv venv'  // Crée un environnement virtuel nommé 'venv'
+                    sh 'python -m venv venv'  // Crée un environnement virtuel nommé 'venv'
 
                     // Activer l'environnement virtuel
                     sh '. venv/bin/activate'  // Active l'environnement virtuel
